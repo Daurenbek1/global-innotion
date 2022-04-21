@@ -1,0 +1,11 @@
+.img {
+    max-width: 200px;
+}
+.name {
+    color: #fff;
+    margin-left: 20px;
+}
+.link {
+    text-decoration: none;
+    display: inline-block;
+}
