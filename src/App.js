@@ -2,7 +2,9 @@ import './styles/App.css'
 import Header from './components/Header/Header';
 import MyModal from './components/UI/mymodal/MyModal';
 import { useState } from "react"
-import MyButton from './components/UI/mybutton/MyButton';
+import Home from './containers/home/Home';
+import News from './containers/news/News'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
 function App() {
@@ -20,8 +22,14 @@ function App() {
   
   return (
     <div className="App">
-      <Header openModal={openModal}/>
-      <MyModal visible={modal} setVisble={setModal} closeModal={closeModal}/>
+      <BrowserRouter>
+        <Header openModal={openModal}/>
+        <MyModal visible={modal} setVisble={setModal} closeModal={closeModal}/>
+        <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/news' element={<News/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
