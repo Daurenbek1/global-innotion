@@ -1,0 +1,23 @@
+.footer {
+    background-color: #a4a4a4;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.linksInner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.link {
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
