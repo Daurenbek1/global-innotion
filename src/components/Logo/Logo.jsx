@@ -1,8 +1,6 @@
 import classes from './logo.module.css'
 import { NavLink } from 'react-router-dom'
 
-
-
 const Logo = () => {
     return (
         <NavLink to="/" className={classes.link}>

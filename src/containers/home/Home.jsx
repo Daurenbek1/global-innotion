@@ -1,10 +1,17 @@
+import Sliders from "../../components/Slider/Slider"
+import MyModal from './../../components/UI/mymodal/MyModal';
+import modalWindow from './../../store/modalWindow';
 
+import { observer } from 'mobx-react-lite';
 
-
-const Home = () => {
+const Home = observer(() => {
     return (
-        <div style={{textAlign:'center'}}>Home</div>
+        <>
+            {modalWindow.status && <MyModal />}
+            <Sliders/>
+        </>
+        
     )
-}
+});
 
 export default Home

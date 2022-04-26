@@ -2,25 +2,21 @@ import classes from './mymodal.module.css'
 import Form from '../../Form/Form'
 import MyButton from '../mybutton/MyButton'
 
+import { observer } from "mobx-react-lite";
 
-const MyModal = ({visible, setVisible, ...props}) => {
-    
+import modalWindow from "../../../store/modalWindow";
 
-    const rootClasses = [classes.myModal]
-    if(visible) {
-        rootClasses.push(classes.active)
-    }
-
+const MyModal = observer(() => {
     return (
-        <div className={rootClasses.join(' ')} onClick={() => props.closeModal()}>
-            <div className={classes.myModalContent} onClick={e => e.stopPropagation()}>
+        <div className={classes.background} onClick={() => modalWindow.setStatus = !modalWindow.status}>
+            <div className={classes.myModal} onClick={e => e.stopPropagation()}>
                 <div style={{position:'absolute', right:'10px', top: '10px'}}>
-                    <MyButton onClick={() => props.closeModal()}>Закрыть</MyButton>
+                    <MyButton onClick={() => modalWindow.setStatus = !modalWindow.status}>Закрыть</MyButton>
                 </div>
-                <Form closeModal={props.closeModal}></Form>
+                <Form />
             </div>
         </div>
-    )
-}
+    );
+});
 
 export default MyModal
