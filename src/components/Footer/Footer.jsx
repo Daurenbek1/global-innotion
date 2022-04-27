@@ -1,10 +1,7 @@
 import Logo from "../Logo/Logo"
 import classes from './footer.module.css'
 
-
-
 const Footer = (props) => {
-
     const newsPortal = [
         {name: 'BBC News', link: 'https://www.bbc.com/news'},
         {name: 'Yahoo News', link: 'https://news.yahoo.com/'},
@@ -17,9 +14,11 @@ const Footer = (props) => {
         <footer className={classes.footer}>
             <Logo/>
             <div className={classes.linksInner}>
-                {newsPortal.map((newsItem) => <div className={classes.linksItem}>
-                                            <a className={classes.link} href={newsItem.link} target="_blank">{newsItem.name}</a>
-                                        </div>)}
+                {newsPortal.map((newsItem) => 
+                    <div className={classes.linksItem}>
+                        <a className={classes.link} href={newsItem.link} target="_blank">{newsItem.name}</a>
+                    </div>
+                )}
             </div>
         </footer>
     )

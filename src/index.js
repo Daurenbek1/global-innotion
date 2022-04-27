@@ -16,12 +16,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/news' element={<News />} />
-      </Routes>
-      <Footer />
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/news/:newId' element={<News />} />
+        </Routes>
+        <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

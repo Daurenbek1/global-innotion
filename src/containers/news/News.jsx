@@ -5,21 +5,31 @@ import NewsService from './../../API/NewsService';
 import MyModal from './../../components/UI/mymodal/MyModal';
 import modalWindow from './../../store/modalWindow';
 import { observer } from 'mobx-react-lite';
+import { useParams } from 'react-router-dom';
 
 const News = observer(() => {    
-    const [news, setNews] = useState([]);
+    const { newId } = useParams();
+
+    const [newItem, setNewItem] = useState({});
     const [loading, setLoading] = useState(false);
 
-    async function fetchPosts() {
+    async function getData() {
         setLoading(true);
-        const news = await NewsService.getAll();
-        setNews(news);
-        console.log(news);
+        const photos = await NewsService.getPhotos();
+        const posts = await NewsService.getPosts();
+        const _newItem = {
+            imageUrl: photos[newId].url,
+            ...posts[newId]
+        }
+
+
+        setNewItem(_newItem);
+        console.log(_newItem);
         setLoading(false);
     }
 
     useEffect(() => {
-        fetchPosts();
+        getData();
     }, [])
   
     return (
@@ -29,7 +39,7 @@ const News = observer(() => {
                 <h1 className={classes.title}>Новости</h1>
                 {loading
                     ? <h1 className={classes.loading}>Идеть загрузка...</h1>
-                    : <NewsItem news={news}/>
+                    : <NewsItem newItem={newItem}/>
                 }
             </div>
         </>

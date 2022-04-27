@@ -20,3 +20,30 @@
     margin-top: 20px;
 }
 
+@media only screen and (max-width: 886px) {
+    .info {
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (max-width: 773px) {
+    .newsItem {
+        flex-wrap: wrap;
+    }
+    .img {
+        margin: 0 auto;
+    }
+    .info {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    .img {
+        width: 100%;
+    }
+    .info {
+        margin: 10px;
+    }
+}
+

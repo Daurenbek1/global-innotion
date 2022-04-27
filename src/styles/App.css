@@ -10,3 +10,18 @@
     display: flex;
     flex-direction: column;
 }
+
+
+@media only screen and (max-width: 1295px) {
+    #root {
+        max-width: 1100px;
+    }
+}
+@media only screen and (max-width: 1175px) {
+    #root {
+        max-width: 900px;
+    }
+}
+
+
+

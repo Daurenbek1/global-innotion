@@ -1,0 +1,37 @@
+.main {
+    background-color: #a4a4a4;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.img {
+    max-width: 50%;
+}
+.content {
+    padding: 20px;
+    color: #fff;
+}
+.title {
+    text-align: center;
+}
+
+.descr {
+    margin: 20px 0;
+}
+.mainTitle {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 530px) {
+    .main {
+        flex-wrap: wrap;
+    }
+    .img {
+        max-width: 100%;
+    }
+}
